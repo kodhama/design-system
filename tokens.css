@@ -1,0 +1,79 @@
+/*
+ * kodhama design system — tokens
+ *
+ * Extracted verbatim from trellis's landing page (docs/index.html), the
+ * design system's source of truth. This is extraction, not redesign: every
+ * value below is copied exactly as it appears upstream.
+ *
+ * Structure mirrors the source:
+ *   1. :root            — light values (the default block)
+ *   2. prefers-color-scheme: dark — dark values, applied by OS/browser preference
+ *   3. [data-theme="light"] / [data-theme="dark"] — explicit override blocks,
+ *      used by the theme toggle to pin a theme regardless of OS preference
+ *
+ * Consuming an LP: paste this file in as-is, or @import it. Do not edit
+ * values here to fit a single page — open a PR upstream instead so every
+ * consumer gets the fix.
+ */
+
+:root {
+  /* color */
+  --bg: #f5f7f4;
+  --surface: #ffffff;
+  --text: #16201b;
+  --muted: #5a6b62;
+  --accent: #1f9d68;
+  --accent-ink: #0c5d3c;
+  --line: #e0e7e1;
+  --code-bg: #0e1712;
+  --code-text: #d7e6dd;
+  --code-accent: #56d69b;
+
+  /* layout */
+  --maxw: 1080px;
+
+  /* type */
+  --sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0d1411;
+    --surface: #131c18;
+    --text: #e2eae5;
+    --muted: #91a59b;
+    --accent: #4ccb90;
+    --accent-ink: #9fe9c4;
+    --line: #223029;
+    --code-bg: #0a110d;
+    --code-text: #d7e6dd;
+    --code-accent: #56d69b;
+  }
+}
+
+:root[data-theme="light"] {
+  --bg: #f5f7f4;
+  --surface: #ffffff;
+  --text: #16201b;
+  --muted: #5a6b62;
+  --accent: #1f9d68;
+  --accent-ink: #0c5d3c;
+  --line: #e0e7e1;
+  --code-bg: #0e1712;
+  --code-text: #d7e6dd;
+  --code-accent: #56d69b;
+}
+
+:root[data-theme="dark"] {
+  --bg: #0d1411;
+  --surface: #131c18;
+  --text: #e2eae5;
+  --muted: #91a59b;
+  --accent: #4ccb90;
+  --accent-ink: #9fe9c4;
+  --line: #223029;
+  --code-bg: #0a110d;
+  --code-text: #d7e6dd;
+  --code-accent: #56d69b;
+}
