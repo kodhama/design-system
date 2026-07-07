@@ -25,6 +25,10 @@ this repo (design-system) · [homebrew-tap](https://github.com/kodhama/homebrew-
   self-contained SVGs, plus `icons/grammar.md` with the shared grammar
   rules and the 19px legibility check. **Provisional** — see
   `icons/grammar.md` for the pending design-review status.
+- `identity/` — the original identity working notes and preview (`README.md`
+  + `preview.html`) that `icons/` and `icons/grammar.md` were extracted
+  from during the wave 1 lift, now colocated here instead of left behind
+  in math-quest.
 - `lp-generator.md` — the contract a consuming repo's LP furrow follows to
   generate its own `docs/index.html` from this repo.
 
