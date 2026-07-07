@@ -53,7 +53,7 @@ invariants themselves are not.
 
 This is the same declared vocabulary math-quest's own `.trellis/profile.md`
 already carries (`ADR-0029`), and the one every other kodhama-family repo
-(`espalier`, `espial`, `kodhama`) now declares too — one vocabulary for the
+(`grove`, `wisp`, `kodhama`) now declares too — one vocabulary for the
 whole family, per trellis's own open-lifecycle contract (`spec-0001`), not
 a bespoke one per repo. Trellis's own self-application (its own
 `decisions/`) keeps its native `draft → ratified` — that's the same act

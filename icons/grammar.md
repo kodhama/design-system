@@ -25,8 +25,8 @@ One grammar, three marks, each adding a layer to the same scene:
 | Mark | File | Scene | Reading |
 |---|---|---|---|
 | **trellis** | `trellis.svg` | posts + laths — the bare structure | governance: the frame everything grows along |
-| **espalier** | `espalier.svg` | the tree trained along the laths: trunk, tiers on the wires, growing tip | the swarm: growth under the frame |
-| **espial** | `espial.svg` | nodes perched on the laths, edges converging, one lit | observability: the kodama watching — who is working, right now |
+| **grove** | `grove.svg` | the tree trained along the laths: trunk, tiers on the wires, growing tip | the swarm: growth under the frame |
+| **wisp** | `wisp.svg` | nodes perched on the laths, edges converging, one lit | observability: the kodama watching — who is working, right now |
 
 ## Shared grammar
 
@@ -43,7 +43,7 @@ One grammar, three marks, each adding a layer to the same scene:
   overlapping strokes reading as a blob. Check by rendering each mark at
   19×19 alongside its full-size version; `icons/preview.html`-style
   side-by-side (not included in this repo — build one ad hoc, or reuse the
-  espalier repo's `identity/preview.html` pattern) is the fastest way to
+  grove repo's `identity/preview.html` pattern) is the fastest way to
   eyeball it. All three marks here were extracted from a source that had
   already passed this check once (see `preview.html`'s `.small` tiles,
   rendered at `width:19px;height:19px`).
@@ -52,8 +52,8 @@ One grammar, three marks, each adding a layer to the same scene:
 
 - `trellis.svg` — posts + laths, no separate accent layer (see grammar
   exception above).
-- `espalier.svg` — laths (structure) + trunk/tiers/tip (accent).
-- `espial.svg` — laths (structure) + two open nodes + one filled (lit)
+- `grove.svg` — laths (structure) + trunk/tiers/tip (accent).
+- `wisp.svg` — laths (structure) + two open nodes + one filled (lit)
   node + converging edges (accent).
 
 Each file is self-contained: `xmlns` declared, `viewBox="0 0 24 24"`

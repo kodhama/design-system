@@ -16,8 +16,8 @@ One grammar, three marks, each adding a layer to the same scene:
 | Mark | Scene | Reading |
 |---|---|---|
 | **trellis** (existing) | posts + laths — the bare structure | governance: the frame everything grows along |
-| **espalier** (new) | the tree trained along the laths: trunk, tiers on the wires, growing tip | the swarm: growth under the frame |
-| **espial** (new) | nodes perched on the laths, edges converging, one lit | observability: the kodama watching — who is working, right now |
+| **grove** (new) | the tree trained along the laths: trunk, tiers on the wires, growing tip | the swarm: growth under the frame |
+| **wisp** (new) | nodes perched on the laths, edges converging, one lit | observability: the kodama watching — who is working, right now |
 
 ## Shared grammar (the rules the design pass will formalize)
 
@@ -31,7 +31,7 @@ One grammar, three marks, each adding a layer to the same scene:
 ## Sources
 
 ```svg
-<!-- espalier -->
+<!-- grove -->
 <svg viewBox="0 0 24 24" fill="none">
   <path d="M2 9h20M2 15h20" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" opacity=".55"/>
   <path d="M12 21V7M12 7C11 6.3 10.6 5.2 10.5 4M12 7C13 6.3 13.4 5.2 13.5 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>

@@ -237,7 +237,7 @@ Pill-shaped button that flips between light/dark by stamping
 ```
 
 Note: the storage key (`trellis-theme`) is product-specific in the source.
-Consumers should namespace this per product (e.g. `espalier-theme`) rather
+Consumers should namespace this per product (e.g. `grove-theme`) rather
 than copying the literal key.
 
 ---

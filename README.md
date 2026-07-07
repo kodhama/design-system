@@ -7,8 +7,8 @@ other brand surfaces) a consistent look, in one place instead of
 copy-pasted and drifting across repos.
 
 The family: [trellis](https://github.com/kodhama/trellis) (governance) ·
-[espalier](https://github.com/kodhama/espalier) (agent swarm) ·
-[espial](https://github.com/kodhama/espial) (runtime observability) ·
+[grove](https://github.com/kodhama/grove) (agent swarm) ·
+[wisp](https://github.com/kodhama/wisp) (runtime observability) ·
 this repo (design-system) · [homebrew-tap](https://github.com/kodhama/homebrew-tap)
 (delivery).
 
@@ -21,7 +21,7 @@ this repo (design-system) · [homebrew-tap](https://github.com/kodhama/homebrew-
 - `patterns.md` — component patterns (eyebrow, card, terminal, lattice
   motif, theme toggle, climbing-plant animation, compare-pairs,
   buttons/pills) as faithful CSS/HTML reference extracts.
-- `icons/` — the three family marks (trellis, espalier, espial) as
+- `icons/` — the three family marks (trellis, grove, wisp) as
   self-contained SVGs, plus `icons/grammar.md` with the shared grammar
   rules and the 19px legibility check. **Provisional** — see
   `icons/grammar.md` for the pending design-review status.
@@ -55,7 +55,7 @@ Full instructions for that process live in `lp-generator.md` — it's the
 file a consuming repo's furrow actually loads.
 
 This keeps dependency direction consistent with the rest of the family
-(espial → espalier → trellis, strictly downward): the design system sits
+(wisp → grove → trellis, strictly downward): the design system sits
 above all of them and reaches them only through this generation-time link,
 never the other way around, and never as a build-time coupling that could
 break a product's build if this repo has an issue.
