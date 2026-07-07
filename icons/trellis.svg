@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+  <title>trellis mark</title>
+  <path d="M4 21V5M12 21V3M20 21V5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+  <path d="M2 9h20M2 15h20" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" opacity=".55"/>
+</svg>

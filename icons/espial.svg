@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+  <title>espial mark</title>
+  <path d="M2 9h20M2 15h20" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" opacity=".55"/>
+  <path d="M7.5 10.8 10 13.2M16.5 10.8 14 13.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+  <circle cx="5.5" cy="9" r="2.1" stroke="currentColor" stroke-width="1.7"/>
+  <circle cx="18.5" cy="9" r="2.1" stroke="currentColor" stroke-width="1.7"/>
+  <circle cx="12" cy="15" r="2.1" fill="currentColor"/>
+</svg>
