@@ -21,14 +21,15 @@ this repo (design-system) · [homebrew-tap](https://github.com/kodhama/homebrew-
 - `patterns.md` — component patterns (eyebrow, card, terminal, lattice
   motif, theme toggle, climbing-plant animation, compare-pairs,
   buttons/pills) as faithful CSS/HTML reference extracts.
-- `icons/` — the three family marks (trellis, grove, wisp) as
-  self-contained SVGs, plus `icons/grammar.md` with the shared grammar
-  rules and the 19px legibility check. **Provisional** — see
-  `icons/grammar.md` for the pending design-review status.
-- `identity/` — the original identity working notes and preview (`README.md`
-  + `preview.html`) that `icons/` and `icons/grammar.md` were extracted
-  from during the wave 1 lift, now colocated here instead of left behind
-  in math-quest.
+- `icons/` — the five family marks (the org mark `kodhama`/`kodhama-quiet`,
+  plus the three product marks `trellis`, `grove`, `wisp`) as self-contained
+  SVGs, plus `icons/grammar.md` with the shared grammar rules and the 16px
+  legibility floor. **Finalized** by the T2 design-review pass — see
+  `icons/grammar.md` and `identity/spec.md`.
+- `identity/` — `spec.md` (the finalized identity spec) plus the original
+  identity working notes and preview (`README.md` + `preview.html`) that
+  `icons/` and `icons/grammar.md` were first extracted from during the wave
+  1 lift, kept as provenance and marked superseded rather than rewritten.
 - `lp-generator.md` — the contract a consuming repo's LP furrow follows to
   generate its own `docs/index.html` from this repo.
 
@@ -72,8 +73,12 @@ commit has no stable identity for the `kodhama-ds` stamp to record.
 
 Bootstrapped from trellis's landing page (`docs/index.html`), the design
 system's original source of truth — this is an extraction of what already
-shipped there, not a from-scratch redesign. The icon family is
-provisional pending its own design-review pass (see `icons/grammar.md`).
+shipped there, not a from-scratch redesign. The icon family's
+design-review pass is complete (see `icons/grammar.md` and
+`identity/spec.md`); the additions from that pass (the org mark, the
+two-tone marks, and the seasonal/type/spacing tokens in `tokens.css`)
+aren't yet covered by a git tag — pin to the next tag cut after this
+merges to pick them up.
 
 ## License
 
