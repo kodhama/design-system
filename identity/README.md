@@ -1,5 +1,12 @@
 # kodhama icon family — initial identity (provisional)
 
+> **Superseded by [`identity/spec.md`](spec.md)** — the T2 design pass
+> locked the finalized identity (org mark, woven/two-tone product marks,
+> the "spirits are solid, structure is faint" rule). This file is kept
+> as-is for provenance — the original working notes, not edited in place —
+> per this repo's `superseded` convention (`.trellis/profile.md`,
+> `decisions/README.md`).
+
 Open `preview.html` to see the three marks side by side, light and dark.
 **Provisional by design**: these are the initial stab; the design-system
 pass (plan-suite-lift T2, run with Claude design) reviews, refines, and

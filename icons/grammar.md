@@ -1,62 +1,91 @@
 # kodhama icon family — grammar
 
-Three marks, one grammar. Extracted from
-`tools/espalier/identity/README.md` and `tools/espalier/identity/preview.html`
-in the espalier repo (mq-source at lift time) — the identity's source of
-truth before this repo became its one home.
-
-**Status: provisional.** The README this was extracted from says so
-explicitly: these are an initial stab, not a finalized identity. The
-design-system pass that reviews and finalizes them (a design/judgment
-sitting, per this org's model-economy rule — not a Sonnet-class execution
-wave) has not happened yet. Treat `icons/*.svg` as placeholders faithfully
-lifted from their prior home, not as approved final marks. That review is
-an open item for this repo, tracked in the conductor ledger, not resolved
-by this bootstrap.
+**Finalized.** This supersedes the provisional grammar the previous
+`icons/grammar.md` flagged as pending: it is the output of the
+design-review pass (run with Claude design, plan-suite-lift T2) that the
+old file, `identity/README.md`, and the repo `README.md` all named as the
+open item. The icons are no longer placeholders.
 
 ## The family logic
 
-Org: **kodhama** — a play on the *kodama*, the tree spirits of Japanese
-folklore (see Miyazaki's *Mononoke Hime*): the quiet watchers of a healthy
-forest. kodhama is the forest all three packages live in.
+**kodhama** is the guardian tree-spirit (a *kodama*) that watches the whole
+forest. There are four marks: the org mark plus the three products — and
+each product carries **one fragment of the kodhama mark**, so the family
+reads as one thing split three ways:
 
-One grammar, three marks, each adding a layer to the same scene:
+| Mark | Fragment | Reading |
+|---|---|---|
+| **kodhama** | the whole — ring + sparks + laths | the guardian spirit / the forest |
+| **trellis** | the **laths** | governance: the frame growth is trained along |
+| **grove** | the **ring** | the assembly: tending agents gathered as a crown |
+| **wisp** | the **sparks** | observability: little watchers, mini-kodhamas |
 
-| Mark | File | Scene | Reading |
-|---|---|---|---|
-| **trellis** | `trellis.svg` | posts + laths — the bare structure | governance: the frame everything grows along |
-| **grove** | `grove.svg` | the tree trained along the laths: trunk, tiers on the wires, growing tip | the swarm: growth under the frame |
-| **wisp** | `wisp.svg` | nodes perched on the laths, edges converging, one lit | observability: the kodama watching — who is working, right now |
+A wisp is a spark drifted free of the great spirit's ring — same soul,
+smaller scale.
 
-## Shared grammar
+## Family rule — spirits are solid, structure is faint
 
-- **24×24 viewBox**, **1.7 stroke**, **round caps**, `currentColor` — no
-  hard-coded color inside a mark; it inherits from context.
-- **Solid accent = the living/active layer; 0.55 opacity = the structure.**
-- The two laths (`M2 9h20 M2 15h20`) are the family constant — present in
-  every mark, always as structure — **except in trellis's own mark**, where
-  the structure *is* the subject: there, the verticals (the posts) carry
-  the accent (full opacity) and the laths are still the 0.55-opacity
-  structure line. Trellis has no separate "living" layer drawn on top of
-  its own structure; the frame itself is what's being depicted.
-- Marks must survive at **19px** (header size) — legible, not muddy, no
-  overlapping strokes reading as a blob. Check by rendering each mark at
-  19×19 alongside its full-size version; `icons/preview.html`-style
-  side-by-side (not included in this repo — build one ad hoc, or reuse the
-  grove repo's `identity/preview.html` pattern) is the fastest way to
-  eyeball it. All three marks here were extracted from a source that had
-  already passed this check once (see `preview.html`'s `.small` tiles,
-  rendered at `width:19px;height:19px`).
+This **retires** the old per-mark rule ("solid accent = living layer, 0.55
+opacity = structure") *and* the trellis exception. The new rule:
+
+- **kodhama** and **wisp** carry the living spark — they have solid fills.
+- **grove** and **trellis** are structure the spirits inhabit — no solid
+  fill; their depth comes from a **second tone** (`--accent-soft`), not
+  from opacity.
+
+## Shared pen
+
+- **24×24 viewBox**, **1.7 stroke**, **round caps and round joins**,
+  `currentColor` — no hard-coded hex inside a mark.
+- UI icons keep a **2px safe area** (artwork within 2–22).
+- Every mark and icon must survive **16px** (favicon). If a detail dies
+  there, drop it.
+
+## Two-tone — `--accent-soft`
+
+```css
+--accent-soft: color-mix(in srgb, var(--accent) 58%, var(--surface));
+```
+
+A lighter shade of the (possibly seasonal) accent, mixed toward the
+surface so it tracks **both theme and season** and never muddies to grey
+the way an opacity-dimmed accent does. The structure marks (trellis, grove)
+use it for their secondary strand; **functional UI icons stay monoline
+`currentColor`** — the two-tone is reserved for the brand-inflected few.
+
+## The marks — exact geometry
+
+- **kodhama — spark echo** (`kodhama.svg`): laths `M2 9h20 M2 15h20` at .55
+  + ring r6.8 + solid spark (19.3, 4.7) r1.3 + faint spark (21.9, 2.1) r.85
+  @ .45. For standalone contexts (avatar, favicon, app icon, social).
+- **kodhama — quiet echo** (`kodhama-quiet.svg`): laths .55 + plain ring
+  r7.5. For lockups — the wordmark carries the sparks, so the mark goes
+  quiet. **One echo per surface.**
+- **trellis** (`trellis.svg`): **woven** — three posts and two laths in a
+  true over-under, square butt corners at the tucks, round caps on the open
+  ends. Posts take the accent; laths take `--accent-soft`.
+- **grove** (`grove.svg`): a mature crown (`circle 13.4,9.4 r5.6`, accent)
+  with a younger tree tucked **behind** it (`circle 7.4,12 r3.2`,
+  `--accent-soft`, its arc broken by true occlusion where it passes behind
+  the crown) + two trunks.
+- **wisp** (`wisp.svg`): five sparks splayed from one solid base —
+  base (12, 17) r2.3 + four rising dots (opacity .58–.75). A mini-kodhama.
+
+## UI iconography
+
+Functional icons are **monoline `currentColor`**. The brand-inflected few
+carry a motif in the two-tone: **watcher** (ring + spark — a mini-kodhama;
+observe), **signal** (a spark broadcasting; event/telemetry), **watch**
+(eye with a soft iris; live view). Solid dots are living points; outlines
+are structure. See `identity/preview.html` for the specimen set. The full
+inventory grows with the wisp UI, where real icon needs surface.
 
 ## Files in this directory
 
-- `trellis.svg` — posts + laths, no separate accent layer (see grammar
-  exception above).
-- `grove.svg` — laths (structure) + trunk/tiers/tip (accent).
-- `wisp.svg` — laths (structure) + two open nodes + one filled (lit)
-  node + converging edges (accent).
+- `kodhama.svg`, `kodhama-quiet.svg` — the org mark's two adaptive states.
+- `trellis.svg`, `grove.svg`, `wisp.svg` — the three product marks.
 
-Each file is self-contained: `xmlns` declared, `viewBox="0 0 24 24"`
-preserved, `currentColor` for strokes/fills so the mark inherits color from
-whatever wraps it (set `color` on a parent element or pass a `style`/class
-override — do not hard-code a hex inside these files).
+Each is self-contained: `xmlns` + `viewBox="0 0 24 24"`, `currentColor` for
+strokes/fills. The two-tone strands read `var(--accent-soft, …)` with a
+self-contained `color-mix` fallback, so they work with or without the token
+defined by the host.

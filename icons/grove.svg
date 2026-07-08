@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true">
   <title>grove mark</title>
-  <path d="M2 9h20M2 15h20" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" opacity=".55"/>
-  <path d="M12 21V7M12 7C11 6.3 10.6 5.2 10.5 4M12 7C13 6.3 13.4 5.2 13.5 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
-  <path d="M12 11C9.8 11 8.2 9 5 9M12 11C14.2 11 15.8 9 19 9M12 17C9.8 17 8.2 15 5 15M12 17C14.2 17 15.8 15 19 15" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+  <path d="M10.007 13.855A3.2 3.2 0 1 1 7.829 8.829" style="stroke:var(--accent-soft, color-mix(in srgb, currentColor 58%, #fff))" stroke-width="1.7" stroke-linecap="round"/>
+  <path d="M7.4 21V15.2" style="stroke:var(--accent-soft, color-mix(in srgb, currentColor 58%, #fff))" stroke-width="1.7" stroke-linecap="round"/>
+  <circle cx="13.4" cy="9.4" r="5.6" stroke="currentColor" stroke-width="1.7"/>
+  <path d="M13.4 21V15" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
 </svg>

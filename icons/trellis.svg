@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-  <title>trellis mark</title>
-  <path d="M4 21V5M12 21V3M20 21V5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
-  <path d="M2 9h20M2 15h20" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" opacity=".55"/>
+  <title>trellis mark — woven</title>
+  <path d="M4 21V10.2M4 7.8V5M12 21V16.2M12 13.8V3M20 21V10.2M20 7.8V5" stroke="currentColor" stroke-width="1.7" stroke-linecap="butt"/>
+  <path d="M4 21L4 21M12 21L12 21M20 21L20 21M4 5L4 5M12 3L12 3M20 5L20 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+  <path d="M2 9H10.8M13.2 9H22M2 15H2.8M5.2 15H18.8M21.2 15H22" style="stroke:var(--accent-soft, color-mix(in srgb, currentColor 58%, #fff))" stroke-width="1.7" stroke-linecap="butt"/>
+  <path d="M2 9L2 9M22 9L22 9M2 15L2 15M22 15L22 15" style="stroke:var(--accent-soft, color-mix(in srgb, currentColor 58%, #fff))" stroke-width="1.7" stroke-linecap="round"/>
 </svg>
