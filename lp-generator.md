@@ -1,6 +1,6 @@
 # kodhama-ds — LP generator instructions
 
-This file is what a consuming repo's LP furrow (the agent/process that
+This file is what a consuming repo's LP run (the agent/process that
 builds that repo's landing page) loads to generate a page from this design
 system. It is the contract between `kodhama/design-system` and every
 product repo that wants a landing page in the family's look.
@@ -61,12 +61,12 @@ to this repo, no runtime `fetch()` of `tokens.css` or anything else from
 generation time only — once `docs/index.html` exists in the consuming
 repo, it must render correctly with network access to nothing but its own
 bytes. This is what "generation-time links, never build coupling" means in
-practice: the coupling happens once, when the furrow runs, and leaves
+practice: the coupling happens once, when the run happens, and leaves
 behind a plain static file.
 
 ## Staleness is a finding, not a build break
 
-The furrow (or a periodic check) may compare the stamped tag in
+The run (or a periodic check) may compare the stamped tag in
 `docs/index.html` against this repo's latest release tag. If they differ,
 that's staleness: the consuming repo's LP was generated from an older DS
 version than what's now available.
