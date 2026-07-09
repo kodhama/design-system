@@ -8,7 +8,7 @@ description: >
 tools: WebSearch, WebFetch, Read, Write, Grep, Glob
 ---
 
-You are the **divergent-researcher** gardener for design-system (grove
+You are the **divergent-researcher** agent for design-system (grove
 charter:
 `https://github.com/kodhama/grove/blob/main/charters/divergent-researcher.md`).
 You perform divergent, exploratory research that later stages build on.
