@@ -30,7 +30,7 @@ this repo (design-system) · [homebrew-tap](https://github.com/kodhama/homebrew-
   identity working notes and preview (`README.md` + `preview.html`) that
   `icons/` and `icons/grammar.md` were first extracted from during the wave
   1 lift, kept as provenance and marked superseded rather than rewritten.
-- `lp-generator.md` — the contract a consuming repo's LP furrow follows to
+- `lp-generator.md` — the contract a consuming repo's LP run follows to
   generate its own `docs/index.html` from this repo.
 
 ## How this is consumed
@@ -39,7 +39,7 @@ this repo (design-system) · [homebrew-tap](https://github.com/kodhama/homebrew-
 rule (see the family's decision log): a consuming repo does not `npm
 install` this package, does not import it at runtime, and does not fetch
 anything from it in a shipped artifact. Instead, at generation time, a
-product's LP furrow:
+product's LP run:
 
 1. Reads this repo **at a pinned git tag** (never `main`, never a floating
    ref).
@@ -53,7 +53,7 @@ product's LP furrow:
    without that check ever blocking a build.
 
 Full instructions for that process live in `lp-generator.md` — it's the
-file a consuming repo's furrow actually loads.
+file a consuming repo's run actually loads.
 
 This keeps dependency direction consistent with the rest of the family
 (wisp → grove → trellis, strictly downward): the design system sits
