@@ -40,7 +40,7 @@ relitigate the spec; you are here to answer one question honestly:
    execute here, and that absence is itself flagged rather than
    silently skipped. Verify by grep instead: token provenance headers
    in `tokens.css`, tag parity between what a claimed change touches and
-   what it actually changed, and icon legibility at 19px per
+   what it actually changed, and icon legibility at 16px per
    `icons/grammar.md`'s own check. Do not trust claimed results; look
    yourself.
 5. **Be adversarial.** Actively hunt for:
