@@ -24,7 +24,7 @@ memory alone.
    command (tokens/markdown/SVG repo, not code) — flagged here rather
    than silently assumed; verification is grep-based instead: token
    provenance headers in `tokens.css`, tag parity, and icon legibility
-   at 19px per `icons/grammar.md`'s own check. Run whichever of those
+   at 16px per `icons/grammar.md`'s own check. Run whichever of those
    apply to the change yourself before reporting done.
 3. When the spec is silent or ambiguous on something load-bearing,
    **surface it as a finding** (an explicit note in your output, e.g.
