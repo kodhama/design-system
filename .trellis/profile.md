@@ -51,7 +51,7 @@ invariants themselves are not.
 - `superseded` = replaced; carries a forward pointer, original content
   never edited in place.
 
-This is the same declared vocabulary math-quest's own `.trellis/profile.md`
+This is the same declared vocabulary math-quest's own `.trellis/expression.md`
 already carries (`ADR-0029`), and the one every other kodhama-family repo
 (`grove`, `wisp`, `kodhama`) now declares too — one vocabulary for the
 whole family, per trellis's own open-lifecycle contract (`spec-0001`), not

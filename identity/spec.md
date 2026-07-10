@@ -105,8 +105,8 @@ DS versioning rule.
 with dark-mode variants and explicit-theme pins. The type scale, radius,
 shadow and spacing tokens surfaced on the spec sheet were codified in the
 same pass. This repo's release unit is a git tag (see root `README.md`
-§Versioning) — these token additions are not yet tagged; the next tag cut
-after this change merges is the one consuming repos should pin to for them.
+§Versioning) — these token additions are covered by `v0.2.0`; consuming
+repos should pin to that tag (or later) to pick them up.
 
 ## Lore register (internal)
 
