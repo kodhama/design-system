@@ -58,13 +58,17 @@ a one-time process gap. This ADR is that backfill.
 flagged a legibility-floor contradiction between two T2-authored files.
 This ADR's own drafting re-verified that finding directly against the
 live files (see "Known unresolved contradiction, re-verified" below) and
-found it is **still live in the repo as of this writing** — despite PR #8
+found it was **still live in the repo at drafting time** — despite PR #8
 and `kodhama/design-system#9`'s own text both describing it as
-"already fixed" / "resolved... maintainer-confirmed." That claim does not
+"already fixed" / "resolved... maintainer-confirmed." That claim did not
 match the actual PR #8 diff (which touches only tag-coverage wording in
 `README.md`/`identity/spec.md`, never the legibility-floor lines) or the
-current file contents. Flagged loudly here rather than quietly treated as
-settled, per this repo's own working rules.
+file contents as they stood then. Flagged loudly here rather than quietly
+treated as settled, per this repo's own working rules — and, separately
+from this backfill, it has since been fixed: PR #11 (merged 2026-07-10,
+later the same day) resolved it in favor of `icons/grammar.md`'s 16px
+floor. See "Known unresolved contradiction, re-verified" below for the
+current state.
 
 ## Decision (reconstructed — what T2 actually shipped)
 
@@ -194,34 +198,48 @@ author's own conclusion.
 
 ## Known unresolved contradiction, re-verified
 
-`kodhama/design-system#9`'s own text describes the `icons/grammar.md`
+`kodhama/design-system#9`'s own text described the `icons/grammar.md`
 (16px) vs. `identity/spec.md` (19px + 16px) legibility-floor contradiction
 as "already fixed in PR #8... resolved in favor of grammar.md (16px),
-maintainer-confirmed." **This author re-verified that claim against the
-actual PR #8 diff and the current file contents, and it does not hold:**
+maintainer-confirmed." **At drafting time, this author re-verified that
+claim against the actual PR #8 diff and the then-current file contents,
+and it did not hold:**
 
 - PR #8's own body lists this contradiction explicitly under "Out of
   scope (per instruction)," gated on "an unresolved maintainer question."
 - PR #8's diff touches exactly three files (`​.trellis/profile.md`,
   `README.md`, `identity/spec.md`) and, within `identity/spec.md`, only
   the tag-coverage sentence — never the legibility-floor lines.
-- As of this writing, `icons/grammar.md` line 41 still reads: "Every mark
-  and icon must survive **16px** (favicon)." — no mention of 19px.
-  `identity/spec.md` line 125–126 still reads: "Must survive 19px
-  (header) and 16px (favicon); the spark echo was checked at both." Both
-  lines are unchanged since `592b1df`.
+- At drafting time, `icons/grammar.md` line 41 read: "Every mark and icon
+  must survive **16px** (favicon)." — no mention of 19px. `identity/
+  spec.md` line 125–126 read: "Must survive 19px (header) and 16px
+  (favicon); the spark echo was checked at both." Both lines had been
+  unchanged since `592b1df` up to that point.
 
 So the contradiction T2 itself introduced (two files it authored in the
-same pass disagree on whether a 19px header-size legibility check is
-still required, or only a 16px favicon check) remains live. Separately:
-`identity/spec.md`'s claim that "the spark echo was checked at both"
-sizes is not corroborated anywhere else in the repo — PR #6's own test
-plan carried an explicit, never-checked-off item: "Reviewer: confirm the
-two-tone occlusion on `grove.svg` and the woven over/under on
-`trellis.svg` read cleanly at 19px/16px in an actual browser." This ADR
-does not resolve either the contradiction or the unverified-legibility
-claim — both are recorded as open, not silently accepted as settled
-because a later document asserted they were.
+same pass disagreeing on whether a 19px header-size legibility check was
+still required, or only a 16px favicon check) was live when this ADR was
+drafted.
+
+**Update (2026-07-10, later the same day): resolved by PR #11, separately
+from this ADR.** PR #11 dropped the 19px reference from `identity/
+spec.md`, restating the floor as 16px only to match `icons/grammar.md`
+(now the sole authority for the check), and made the corresponding fix in
+`identity/preview.html`'s small-size specimens and in `.claude/agents/
+executor.md` / `.claude/agents/conformance-reviewer.md`'s citations of
+the check. This was handled as its own fix rather than folded into
+gating this ADR — the maintainer's call, per the related discussion on
+`kodhama/design-system#9`. As of PR #11, `icons/grammar.md` and
+`identity/spec.md` no longer disagree.
+
+Separately, and still open: `identity/spec.md`'s claim that "the spark
+echo was checked at [16px]" is not corroborated anywhere else in the
+repo — PR #6's own test plan carried an explicit, never-checked-off item:
+"Reviewer: confirm the two-tone occlusion on `grove.svg` and the woven
+over/under on `trellis.svg` read cleanly at 19px/16px in an actual
+browser." This ADR does not resolve that unverified-legibility claim — it
+remains open (see Open questions). The contradiction itself, per the
+update above, was resolved separately by PR #11, not by this ADR.
 
 ## Consequences
 
@@ -239,9 +257,11 @@ because a later document asserted they were.
   retrospectively — this ADR is not a template for skipping that step
   again; it is a one-time backfill for a gap that predates the norm
   being enforced in practice.
-- The legibility-floor contradiction and the unverified 16px favicon
-  render remain open (see above) — not resolved by this ADR, not silently
-  waved through either.
+- The legibility-floor contradiction was resolved separately, by PR #11
+  (2026-07-10) — not by this ADR (see "Known unresolved contradiction,
+  re-verified" above). The unverified 16px favicon render claim remains
+  open (see above) — not resolved by this ADR, not silently waved through
+  either.
 
 ## Open questions
 
@@ -249,10 +269,13 @@ because a later document asserted they were.
    actual intent from the identity sitting? In particular: is the
    fragment-split metaphor (§Rationale item 1) the actual reasoning, or
    was there additional design logic not captured in the shipped text?
-2. Should the `icons/grammar.md` (16px) vs. `identity/spec.md` (19px +
+2. ~~Should the `icons/grammar.md` (16px) vs. `identity/spec.md` (19px +
    16px) contradiction be resolved as part of gating this ADR, or handled
-   as a separate follow-up decision? (This ADR does not resolve it —
-   see above.)
+   as a separate follow-up decision?~~ **Moot, resolved:** PR #11
+   (2026-07-10) fixed the contradiction directly as its own change,
+   separate from this ADR — the maintainer's call, per the related
+   discussion on `kodhama/design-system#9`. No gating decision on this
+   ADR was needed.
 3. Should the unverified 16px-favicon-legibility claim in
    `identity/spec.md` be checked against a real renderer before this ADR
    is gated, given `kodhama.svg`'s faint spark (`r=.85`, 45% opacity) is
