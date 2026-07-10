@@ -77,8 +77,7 @@ shipped there, not a from-scratch redesign. The icon family's
 design-review pass is complete (see `icons/grammar.md` and
 `identity/spec.md`); the additions from that pass (the org mark, the
 two-tone marks, and the seasonal/type/spacing tokens in `tokens.css`)
-aren't yet covered by a git tag — pin to the next tag cut after this
-merges to pick them up.
+are covered by `v0.2.0` — pin to that tag (or later) to pick them up.
 
 ## License
 
