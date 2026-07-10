@@ -122,5 +122,6 @@ apostrophe the name swallowed, still rising off the end of the word.
 - `icons/grove.svg` — the ring as a crown over trunks
 - `icons/wisp.svg` — the sparks, a splayed trio from one base
 
-All self-contained, `currentColor`, 24×24. Must survive 19px (header) and
-16px (favicon); the spark echo was checked at both.
+All self-contained, `currentColor`, 24×24. Must survive **16px**
+(favicon), per `icons/grammar.md`; the spark echo was checked at that
+size.
