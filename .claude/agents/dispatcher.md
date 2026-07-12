@@ -22,7 +22,7 @@ single call only; you do not carry it out end to end.
 
 ## Why this file is narrower than the other agents
 
-ADR-0030's team table charters dispatcher as "cold-started: the
+ADR-0030's team table charters head-gardener as "cold-started: the
 interactive session (v0)" — the role's actual job (sequence every other
 agent through a whole workflow, hold the findings ledger, own
 checkpoint-resume bounds) requires state that survives across dozens of
@@ -61,7 +61,8 @@ run, dispatch anyone yourself, or track state for a next call.
 - **Human gates are never yours to skip.** If your answer would route
   past a spec gate, merge gate, or a decision-layer backprop, name the
   gate explicitly rather than silently routing through it.
-
-## Placeholders
-
-None — this file has no project-specific values to fill in.
+- **Never recommend dispatching `executor` without a `gated`/`approved`
+  artifact** for it to read — a spec or a decision, never a conversational
+  brief synthesized from the session (`adr-0005`, decision 2). If a
+  next-dispatch question points at `executor` but names no reviewable
+  artifact, say so and flag it rather than recommending the dispatch.
