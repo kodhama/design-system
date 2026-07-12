@@ -12,20 +12,26 @@ charter's body.
 **These copies are design-system-specific, not generic.** Every
 angle-bracketed placeholder grove's originals declare (test command,
 typecheck command, spec/research-rubric path, parked-item store,
-PR-contract sections, and so on) has already been resolved to this
-repo's real values inline, the same way wisp's vendored copies do it —
-no `## Placeholders` section survives in these files except
-`dispatcher.md`'s (which was already "None" upstream — there was
-nothing to resolve there). See the install PR's description for the
-full placeholder→value table. Re-vendoring a newer grove revision means
-re-resolving placeholders again, not a blind copy-over.
+PR-contract sections, artifact-contract paths, and so on) has already
+been resolved to this repo's real values inline, the same way wisp's
+vendored copies do it — no `## Placeholders` section survives in these
+files; the resolved value sits where the token used to be. See the
+install PR's description for the full placeholder→value table.
+Re-vendoring a newer grove revision means re-resolving placeholders
+again, not a blind copy-over.
+
+**The lifecycle companion is not an agent role and does not live
+here.** The artifact-lifecycle state enum — stated once, sourced by
+every role and the `corpus-reviewer`'s lifecycle check — is installed
+by setup to **`.grove/lifecycle.md`** (grove's own namespace, not this
+loader directory; `adr-0008` as amended) on every install.
 
 **No telemetry installed.** wisp (the `grove-status` skill's home) is
 not vendored in this repo, so the skill is not installed here — optional
 by construction, not a gap.
 
 **`dispatcher.md` is scoped, not a full peer of the rest.** ADR-0030
-charters dispatcher as "cold-started: the interactive session (v0)"
+charters head-gardener as "cold-started: the interactive session (v0)"
 — sequencing a whole run requires state that survives across dozens of
 dispatches, which a one-shot subagent invocation cannot hold. The
 driving session remains the actual dispatcher across a run. This
@@ -48,3 +54,4 @@ for the full role it does not replace.
 | `run-resumer.md` | remediation | resumes a run that died at its turn cap |
 | `propagation-remediator.md` | remediation | writes an honest missing propagation section |
 | `dispatcher.md` | dispatch | one-shot classify/next-dispatch advisor only — not a sequencer |
+| `corpus-reviewer.md` | standing | artifact-corpus conformance vs the repo's own contract; report-only |
