@@ -27,14 +27,17 @@ spec-drift audits — never calendar sweeps.
    lands, a spec-gap bug closes, an upstream version bump lands
    (`adr-0006`), or an overlay/dependency refresh happens), walk the
    `depends_on` graph from the changed artifact outward, scoped to
-   genuine dependents (not the whole archive). For each dependent: does
-   it still hold given the change, or has it silently drifted? When the
-   trigger is an **upstream version bump**, the drift to check is a *pin
-   lag* — flag every consumer whose recorded pin (`repo/id@vN`) now
-   trails the upstream's current version (`.grove/versioning.md`, the
-   versioning companion — `adr-0010`); the
-   flag fires the `conformance-reviewer`'s re-check, it is not itself a
-   verdict.
+   genuine dependents (not the whole archive). `informed_by` is
+   **non-drift** (edge taxonomy: `.grove/relations.md`, `adr-0011`) —
+   the graph walked is `depends_on` **only**; a version bump upstream
+   never obligates re-checking a provenance citation reached via
+   `informed_by`. For each dependent: does it still hold given the
+   change, or has it silently drifted? When the trigger is an
+   **upstream version bump**, the drift to check is a *pin lag* — flag
+   every consumer whose recorded pin (`repo/id@vN`) now trails the
+   upstream's current version (`.grove/versioning.md`, the versioning
+   companion — `adr-0010`); the flag fires the `conformance-reviewer`'s
+   re-check, it is not itself a verdict.
 3. **Calibrate scope honestly.** If a triggered audit's blast radius
    turns out too big or too small for the trigger that fired it, say so
    — that's a finding about the trigger definition, not just the audit.
