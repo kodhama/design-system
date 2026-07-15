@@ -38,6 +38,64 @@ extract, not a suggestion; deviate only where the consuming repo's content
 genuinely doesn't fit a pattern, and note the deviation in the generated
 file's own comments.
 
+## Favicon
+
+Every generated `docs/index.html` gets a browser-tab icon. Ship it as a
+sibling `docs/favicon.svg` plus one `<link>` in the `<head>`:
+
+```html
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+```
+
+**Which mark:** the consuming repo's own product mark if this repo ships
+one for it (`icons/trellis.svg`, `icons/grove.svg`, `icons/wisp.svg`) —
+otherwise the org mark (`icons/kodhama.svg` or `icons/kodhama-quiet.svg`;
+see `icons/grammar.md` for which fits the surface). Repos with no product
+mark of their own (this repo, homebrew-tap) fall back to the org mark too.
+
+**Bake literal colors — don't reference custom properties.** A favicon
+renders outside the host page's CSS cascade (it's a separate resource,
+loaded by the browser chrome, not the document), so `var(--accent)` and
+`var(--accent-soft)` aren't reachable there even though the mark's source
+SVG uses them. Read whatever `--accent` / `--accent-soft` the generated
+page's own `:root` resolves to at generation time — including season, if
+this generation run is setting `data-season` for the page — and write
+those as literal hex values into the favicon's own embedded `<style>`,
+mirrored for both color schemes:
+
+```html
+<style>
+  .accent { stroke: #<light --accent>; }
+  .accent-soft { stroke: #<light --accent-soft, resolved>; }
+  @media (prefers-color-scheme: dark) {
+    .accent { stroke: #<dark --accent>; }
+    .accent-soft { stroke: #<dark --accent-soft, resolved>; }
+  }
+</style>
+```
+
+If the generated page never sets `data-season` (seasonal accents are an
+optional layer per `identity/spec.md` — most generation runs won't turn
+it on unless asked), bake the evergreen default, matching whatever the
+page itself falls back to. This document doesn't decide seasonal
+selection — it only says: whatever the page resolves to, the favicon
+should resolve to the same thing, literally, at generation time.
+
+**Worked example:** `trellis`'s LP is hand-maintained, not
+generator-produced (it's the one exception — see kodhama's own
+`CLAUDE.md`), but its `docs/favicon.svg` (added 2026-07-15) uses exactly
+this technique against `icons/trellis.svg` and is a reasonable reference
+for what a generated one should look like.
+
+**Avatar use is a separate, unresolved question — don't conflate it with
+favicons here.** `icons/kodhama.svg` is spec'd for GitHub-avatar use too,
+but GitHub circle-crops avatar images in several UI surfaces, and that
+mark's faint outer spark sits outside the inscribed circle of its own
+canvas — see `decisions/adr-0001-t2-identity-finalization.md`, Open
+question 3, for the finding and what's still open about it. That's about
+the org's one GitHub avatar upload, not about anything this generator
+produces.
+
 ## Stamp the tag
 
 The generated file must carry the tag it was generated from, in an HTML

@@ -23,6 +23,18 @@ sparks** (below) — mark and name speak one vocabulary, so the adaptive pair
 reads as one being, not two logos. The ring shrinks to r6.8 in the spark
 state to make room; that size difference is optical and intentional.
 
+**Update (2026-07-15) — GitHub org avatar reassigned to the quiet echo.**
+The table above still lists "GitHub org avatar" under the spark echo, but
+that's now superseded: `kodhama.svg`'s faint outer spark (21.9, 2.1) sits
+outside the inscribed circle of its own 24×24 canvas and gets clipped by
+a true edge-to-edge circular avatar crop (verified by rendering — see
+`decisions/adr-0001-t2-identity-finalization.md`, Open question 3). The
+maintainer's call: use `icons/kodhama-quiet.svg` — plain ring, no corner
+elements, immune to the crop — for the GitHub org avatar instead. This is
+a one-off exception to *one echo per surface* (the quiet echo is now
+standing alone here, not beside the wordmark); the spark echo keeps
+favicon/app-icon/social.
+
 ## The shared fragment — family rule
 
 Each product is **one fragment of the kodhama mark**, and the rule is
@@ -107,6 +119,31 @@ shadow and spacing tokens surfaced on the spec sheet were codified in the
 same pass. This repo's release unit is a git tag (see root `README.md`
 §Versioning) — these token additions are covered by `v0.2.0`; consuming
 repos should pin to that tag (or later) to pick them up.
+
+## Social preview images (2026-07-15)
+
+Each product repo gets its own GitHub social-preview image (the card
+GitHub/Slack/Discord/etc. render when a repo or PR link is shared) —
+carrying **that repo's own mark**, distinct from the org avatar (which is
+necessarily singular — GitHub has one avatar per org, not per repo; see
+`lp-generator.md`'s Favicon section for that distinction spelled out).
+
+Convention: 1280×640px (GitHub's recommended ratio), light background
+(`--bg`/`--surface`, evergreen unless a repo has a specific reason to
+season-pin a static image), the repo's own mark + bold wordmark + a
+mono, uppercase, letter-spaced tagline pulled from that repo's own
+README — plus a small `kodhama-quiet.svg` + "kodhama" chip, bottom-right,
+tying the family together without competing with the product's own mark.
+
+Convention path: `.github/social-preview.png`, committed in the
+*consuming* repo (this repo stays source-SVG-only, per its own no-raster
+convention) — GitHub does not auto-read this path, it's a manual upload
+via that repo's Settings → General → Social preview, but checking in the
+generated PNG keeps the artifact's provenance next to the repo it
+represents, the same reasoning as `docs/favicon.svg` living in the
+consuming repo rather than here. First three examples: `trellis`,
+`grove`, `wisp` (added 2026-07-15) — reasonable references for the next
+one.
 
 ## Lore register (internal)
 
