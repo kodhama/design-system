@@ -280,6 +280,34 @@ update above, was resolved separately by PR #11, not by this ADR.
    `identity/spec.md` be checked against a real renderer before this ADR
    is gated, given `kodhama.svg`'s faint spark (`r=.85`, 45% opacity) is
    the highest-risk detail at that size?
+
+   **Update (2026-07-15): partially checked, against a real renderer.**
+   Rendered all five marks at 16px and 32px (headless Chrome, actual
+   rasterizer) — at that size, in isolation, all five read cleanly as
+   distinct shapes; the faint spark does not visually die the way this
+   open question worried about. Two things this check newly surfaces that
+   the original question didn't ask:
+
+   - **Standalone/avatar use has a geometry problem, not a legibility
+     one.** `identity/spec.md` names `kodhama.svg` for "avatar" use
+     (§Decision above), and GitHub crops uploaded avatar images to a
+     circle in several UI surfaces (mentions, notifications, search).
+     `kodhama.svg`'s faint outer spark sits at `(21.9, 2.1)` — distance
+     ≈14.0 from the 24×24 canvas's center `(12,12)`, outside a
+     circle inscribed in that square (radius 12). Rendered edge-to-edge
+     circle-cropped (no padding, matching an uploaded square image), that
+     spark is clipped off entirely; confirmed both by direct geometric
+     calculation and by rendering. `kodhama-quiet.svg` has no corner
+     elements and isn't affected.
+   - This was checked because a maintainer session (2026-07-15) asked for
+     family icons to double as GitHub avatars and favicons; the check was
+     run to answer that, not as a standalone audit.
+
+   **Still open, not resolved by this update:** what to do about it —
+   redraw `kodhama.svg` pulling the sparks inward, use
+   `kodhama-quiet.svg` for avatar contexts instead, or accept the clipped
+   look in circular UI as a known limitation. That's a design call for
+   whoever owns this mark, not something this check decides.
 4. Is the token-count framing ("5 new token categories," from the prior
    audit) worth reconciling against this ADR's more granular enumeration,
    or is the discrepancy immaterial?
