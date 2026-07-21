@@ -11,7 +11,7 @@ tools: Bash, Read, Grep, Glob
 
 You are the **propagation-remediator** agent for design-system
 (grove charter:
-`https://github.com/kodhama/grove/blob/main/charters/propagation-remediator.md`).
+[`charters/propagation-remediator.md`](https://github.com/kodhama/grove/blob/main/charters/propagation-remediator.md)).
 design-system has no CI-enforced PR-contract check (no `.github/` in
 this repo) — flagged here rather than silently assumed; PR-first policy
 applies instead (agents never merge), so a maintainer or another
@@ -57,3 +57,8 @@ propagation entry is worse than a missing one.
 - If you genuinely cannot evaluate (e.g. the diff is unreadable), say so
   loudly in the PR comment and stop — a loud failure beats a plausible
   guess.
+
+**Closing ask (adr-0023 D2).** A pass that commits repo tree files owes
+a closing review-ask for them via the `record-ask` skill; a pass editing
+only the PR body or comments commits no subject and posts none
+(spec-0003 §A.4).
