@@ -1,10 +1,10 @@
 <!-- grove:begin (managed by grove — edit .claude/agents/, not this block) -->
 This repo is **grove-managed**: work items run as
-[grove](https://github.com/kodhama/grove) runs. The agent roles
-live in `.claude/agents/` (placeholders resolved for this repo — no
-test/typecheck gates, verification is grep-based). Telemetry: wisp not
-vendored here, no grove-status skill installed (optional by
-construction). grove plugin@bf7c835
+[grove](https://github.com/kodhama/grove) runs. The fourteen agent
+roles live in `.claude/agents/` (placeholders resolved for this repo —
+no test/typecheck gates, verification is grep-based). Telemetry: wisp
+not vendored here, no grove-status skill installed (optional by
+construction). grove plugin@4449db2
 <!-- grove:end -->
 
 <!-- trellis:begin (managed by trellis — edit .trellis/, not this block) -->
