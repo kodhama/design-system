@@ -25,9 +25,10 @@ updated: YYYY-MM-DD
 ```
 
 What each `status` value means, and who moves an artifact between
-states, lives in **`.grove/internal/lifecycle.md`** — the installed lifecycle
-companion (`grove/adr-0008`; single home per kodhama-0008) — not
-restated here.
+states, lives with the grove **lifecycle companion** — shipped in the
+grove plugin, not vendored here (per the grove lifecycle companion, the
+`grove plugin@<version>` stamp in this repo's `CLAUDE.md`; `grove/adr-0008`,
+`grove/adr-0026` D7) — not restated here.
 
 ## Versioning is a separate axis
 
