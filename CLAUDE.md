@@ -1,10 +1,14 @@
-<!-- grove:begin (managed by grove — edit .claude/agents/, not this block) -->
-This repo is **grove-managed**: work items run as
-[grove](https://github.com/kodhama/grove) runs. The fourteen agent
-roles live in `.claude/agents/` (placeholders resolved for this repo —
-no test/typecheck gates, verification is grep-based). Telemetry: wisp
-not vendored here, no grove-status skill installed (optional by
-construction). grove plugin@4449db2
+<!-- grove:begin (managed by grove — dials live in .grove/, not this block) -->
+Work items matching a grove workflow (W1–W6 — e.g. a bug report → the bug
+pipeline, a research ask → divergent research) run as grove runs, sequenced
+through grove's chartered agent roles, loaded from the grove plugin as
+`grove:<role>` subagents (all thirteen). Anything else — conversation, trivial
+asks, out-of-scope questions — proceeds normally. This repo's dials live in
+`.grove/` (see its README). Version skew (adr-0026 D4): at role start, if the
+installed grove plugin's version differs from the stamp below, disclose the
+divergence loudly in your report and continue — the stamp is the in-repo
+ratified record, never a lock; grove never enforces it.
+grove plugin@0.1.0
 <!-- grove:end -->
 
 <!-- trellis:begin (managed by trellis — edit .trellis/, not this block) -->
