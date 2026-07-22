@@ -1,0 +1,31 @@
+# .grove/config.toml — design-system's shared role config (adr-0026 D3).
+#
+# One file, shared across grove's roles: the config-shaped tokens the grove
+# charters declare, key = the token name. Consumer-authoritative — grove seeds
+# it once and never clobbers it. Every value is a VERIFIED PRIOR, not ground
+# truth: a grove agent verifies it on use, discloses a mismatch loudly and
+# routes the fix back to this file, and never silently substitutes or works
+# around a stale value. An explicit "none — …" is an honest value, not a gap.
+# This is agent-read config (judgment on read); it is never a deterministic
+# machinery read (adr-0026 D3 boundary).
+#
+# design-system is a tokens/markdown/SVG repo (no package.json, no test
+# runner): verification here is grep-based, not a test/typecheck gate. The
+# honest-none values below record that; the per-role addenda under
+# .grove/agents/ carry the grep-based worked methods and the pinned-tag
+# consumer contract.
+
+TEST_CMD = "none — no test runner (no package.json). Verification is grep-based: token provenance headers in tokens.css, tag parity, icon legibility at 16px per icons/grammar.md. See .grove/agents/executor.md and .grove/agents/conformance-reviewer.md."
+TYPECHECK_CMD = "none — tokens/markdown/SVG repo, not code; no typechecker configured"
+LINT_CMD = "none — no linter/formatter (no package.json, no lint config); grep-based checks stand in (see .grove/agents/code-reviewer.md)"
+TEST_DEPS_LEDGER = "none — no test suite, so no per-package test-deps ledger"
+PR_CONTRACT_SECTIONS = "none CI-enforced — no PR template and no .github/ in this repo. By convention a grove-run PR body carries `## Propagation` and/or `## Recommended next task` where relevant; PR-first policy (agents never merge) — checked by hand until a contract exists."
+PARKED_ITEM_STORE = "none dedicated — open items ride each artifact's `## Open questions` section and PR bodies; decision triggers live in decisions/ entries"
+CONVENTIONS_PATH = "no single conventions doc — root CLAUDE.md is grove/trellis managed blocks only. Convention-bearing sources: patterns.md (component patterns; extracts reference tokens.css custom properties), icons/grammar.md (icon grammar + 16px legibility floor), identity/spec.md (identity spec), specs/README.md (artifact contract). See .grove/agents/code-reviewer.md."
+QUALITY_RUBRIC_PATH = "none exists yet"
+SPEC_RUBRIC_PATH = "none exists yet — self-check against specs/README.md's artifact contract (see .grove/agents/contract-author.md)"
+RESEARCH_RUBRIC_PATH = "none exists yet — self-check against specs/README.md's artifact contract (see .grove/agents/divergent-researcher.md)"
+ARTIFACT_DIRS = ["decisions/", "specs/"]
+ARTIFACT_CONTRACT_PATHS = ["decisions/README.md", "specs/README.md"]
+REPO_TYPED_CHECKS = "none beyond the family core — but keep the consumer-tag rule in view (consumers read this repo at a pinned git tag, never main). See .grove/agents/corpus-reviewer.md."
+SEVERITY_TAXONOMY = "none declared — no bug-severity tiers (the dispatcher runs scoped here, no bug pipeline)"
