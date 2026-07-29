@@ -10,9 +10,3 @@ divergence loudly in your report and continue — the stamp is the in-repo
 ratified record, never a lock; grove never enforces it.
 grove plugin@0.1.0
 <!-- grove:end -->
-
-<!-- trellis:begin (managed by trellis — edit .trellis/, not this block) -->
-This project follows **Trellis** — working rules you are expected to follow while you work here. They are imported below:
-@.trellis/internal/trellis.md
-@.trellis/rules.toml
-<!-- trellis:end -->
