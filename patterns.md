@@ -64,6 +64,22 @@ cards, comparison callouts, etc.
 
 ## Terminal (tabs / copy / prompt)
 
+> **The sample content is Trellis's real install copy, and it drifts.** The
+> deliverable of this pattern is the terminal chrome — tabs, prompt, copy button.
+> The commands inside it are a snapshot of `kodhama/trellis` `docs/index.html`,
+> refreshed 2026-07-31 against trellis PR #216. Before that refresh this block had
+> gone stale enough to be actively wrong: a `trellis setup` CLI command that no
+> longer exists (retired by `kodhama-0007` rule 5), a Homebrew tab retired with the
+> binary channel, the pre-`kodhama-0002` marketplace slug (`trellis@trellis` rather
+> than `trellis@kodhama`), and a note claiming "the installer just drops a single
+> binary" — there is no binary. Any family LP generated from the stale version
+> inherited all four.
+>
+> **If you copy this pattern, replace the commands with your own product's.** If
+> you are refreshing the Trellis sample, re-extract it from that repo rather than
+> editing here — trellis is the source of truth for its own install story, and
+> this file is downstream of it.
+
 Fake terminal window: three dots, a row of install-method tabs, a copy
 button, and command lines with a styled prompt glyph and dimmed inline
 comments. Tabs and the copy button are behavior, not just markup — included
@@ -109,37 +125,39 @@ below.
   <div class="tt">
     <i class="dot"></i><i class="dot"></i><i class="dot"></i>
     <div class="tabs" role="tablist" aria-label="Install method">
-      <button class="tab active" role="tab" aria-selected="true" data-tab="curl">curl</button>
-      <button class="tab" role="tab" aria-selected="false" data-tab="brew">Homebrew</button>
-      <button class="tab" role="tab" aria-selected="false" data-tab="cc">Claude Code</button>
+      <button class="tab active" role="tab" aria-selected="true" data-tab="cc">Claude Code</button>
+      <button class="tab" role="tab" aria-selected="false" data-tab="curl">curl</button>
+      <button class="tab" role="tab" aria-selected="false" data-tab="manual">manual copy</button>
     </div>
     <button class="copy" id="copyBtn" aria-label="Copy commands">copy</button>
   </div>
-  <div class="panel active" data-panel="curl">
+  <div class="panel active" data-panel="cc">
+    <div class="cmd"><code><span class="prompt">&gt; </span>/plugin marketplace add kodhama/kodhama</code></div>
+    <div class="cmd"><code><span class="prompt">&gt; </span>/plugin install trellis@kodhama</code></div>
+    <div class="cmd"><code><span class="prompt">&gt; </span>/trellis:setup<span class="cmt">    # writes .trellis/rules.toml — the one file it writes</span></code></div>
+  </div>
+  <div class="panel" data-panel="curl">
     <div class="cmd"><code><span class="prompt">$ </span>curl -fsSL https://raw.githubusercontent.com/kodhama/trellis/main/install.sh | sh</code></div>
-    <div class="cmd"><code><span class="prompt">$ </span>trellis setup<span class="cmt">    # then set it up in your project</span></code></div>
+    <div class="cmd"><code><span class="prompt">$ </span><span class="cmt"># then run /trellis:setup</span></code></div>
   </div>
-  <div class="panel" data-panel="brew">
-    <div class="cmd"><code><span class="prompt">$ </span>brew install kodhama/tap/trellis</code></div>
-    <div class="cmd"><code><span class="prompt">$ </span>trellis setup<span class="cmt">    # then set it up in your project</span></code></div>
-  </div>
-  <div class="panel" data-panel="cc">
-    <div class="cmd"><code><span class="prompt">&gt; </span>/plugin marketplace add kodhama/trellis</code></div>
-    <div class="cmd"><code><span class="prompt">&gt; </span>/plugin install trellis@trellis</code></div>
-    <div class="cmd"><code><span class="prompt">&gt; </span>/trellis:setup<span class="cmt">    # the plugin covers the overlay natively</span></code></div>
+  <div class="panel" data-panel="manual">
+    <div class="cmd"><code><span class="prompt">$ </span>git clone --depth 1 https://github.com/kodhama/trellis</code></div>
+    <div class="cmd"><code><span class="prompt">$ </span>cp trellis/plugins/trellis/reference/... .trellis/<span class="cmt">    # see the README</span></code></div>
   </div>
 </div>
-<p class="tnote">The installer just drops a single binary — it doesn't run anything on its own; you run <code>trellis setup</code>.</p>
+<p class="tnote">No binary, no runtime — the bundle is pre-rendered plain files with a checksum manifest, verified before anything is written.</p>
 ```
 
 ```js
 // tab switching + copy-to-clipboard behavior
+// One key per rendered tab. A tab with no key makes the copy button write the
+// string "undefined" — that shipped on trellis's own page once.
 var commands = {
-  curl: "curl -fsSL https://raw.githubusercontent.com/kodhama/trellis/main/install.sh | sh\ntrellis setup",
-  brew: "brew install kodhama/tap/trellis\ntrellis setup",
-  cc: "/plugin marketplace add kodhama/trellis\n/plugin install trellis@trellis\n/trellis:setup"
+  cc: "/plugin marketplace add kodhama/kodhama\n/plugin install trellis@kodhama\n/trellis:setup",
+  curl: "curl -fsSL https://raw.githubusercontent.com/kodhama/trellis/main/install.sh | sh",
+  manual: "git clone --depth 1 https://github.com/kodhama/trellis"
 };
-var activeTab = "curl";
+var activeTab = "cc";
 var tabs = document.querySelectorAll(".tab");
 var panels = document.querySelectorAll(".terminal .panel");
 tabs.forEach(function (t) {
