@@ -7,10 +7,9 @@ other brand surfaces) a consistent look, in one place instead of
 copy-pasted and drifting across repos.
 
 The family: [trellis](https://github.com/kodhama/trellis) (governance) ·
-[grove](https://github.com/kodhama/grove) (agent swarm) ·
+[grove](https://github.com/kodhama/grove) (agent supervision) ·
 [wisp](https://github.com/kodhama/wisp) (runtime observability) ·
-this repo (design-system) · [homebrew-tap](https://github.com/kodhama/homebrew-tap)
-(delivery).
+this repo (design-system).
 
 ## What's here
 
